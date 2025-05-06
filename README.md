@@ -473,3 +473,84 @@ echo "This is an executable script!"
 
 ---
 
+
+
+## Exercise 1 - Viewing and Modifying File Access Permissions
+
+---
+
+###  1.1 عرض صلاحيات الوصول إلى الملفات
+
+📥 **تنزيل الملفات المطلوبة:**
+```bash
+cd /home/project
+wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/module%201/usdoi.txt
+```
+
+ كل ملف يحتوي على صلاحيات مقسّمة إلى:
+- **User (u)** – المستخدم صاحب الملف
+- **Group (g)** – مجموعة المستخدم
+- **Other (o)** – باقي المستخدمين
+
+ **عرض الصلاحيات لملف:**
+```bash
+ls -l usdoi.txt
+```
+
+ **مثال ناتج:**
+```
+-rw-r--r-- 1 theia theia 8121 May 31 16:45 usdoi.txt
+```
+
+🔍 التحليل:
+- `rw-` → للمستخدم: قراءة وكتابة
+- `r--` → للمجموعة: قراءة فقط
+- `r--` → للآخرين: قراءة فقط
+- لا أحد لديه صلاحية التنفيذ (x)
+
+---
+
+### ✅ 1.2 تعديل صلاحيات الملفات
+
+🛠 **أمر التعديل:** `chmod` (اختصار لـ change mode)
+
+| الرمز | المعنى                 |
+|-------|-------------------------|
+| `r`   | قراءة (read)            |
+| `w`   | كتابة (write)           |
+| `x`   | تنفيذ (execute)         |
+| `u`   | المستخدم                 |
+| `g`   | المجموعة                 |
+| `o`   | الآخرون                 |
+| `+`   | إضافة صلاحية            |
+| `-`   | إزالة صلاحية            |
+
+---
+
+ **أمثلة عملية:**
+
+🔧 **إزالة صلاحية القراءة من الجميع:**
+```bash
+chmod -r usdoi.txt
+ls -l usdoi.txt
+```
+
+🔧 **إعادة صلاحية القراءة للجميع:**
+```bash
+chmod +r usdoi.txt
+ls -l usdoi.txt
+```
+
+🔧 **إزالة صلاحية القراءة فقط من "الآخرين":**
+```bash
+chmod o-r usdoi.txt
+ls -l usdoi.txt
+```
+
+ تأكد في كل مرة من خلال:
+```bash
+ls -l usdoi.txt
+```
+
+---
+
