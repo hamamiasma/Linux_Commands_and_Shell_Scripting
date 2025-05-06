@@ -17,12 +17,13 @@ sudo apt update
 nano هو محرر نصوص بسيط يُستخدم داخل الطرفية (terminal).
 
 🔧 الأمر المستخدم للترقية:
+```bash
 sudo apt upgrade nano
-
+```
 ---
 
 
-تمرين 3 - إنشاء وتحرير الملفات باستخدام Vim
+تمرين 2 - إنشاء وتحرير الملفات باستخدام Vim
 
 ---
 
@@ -31,85 +32,107 @@ sudo apt upgrade nano
 - ليس مثبتًا بشكل افتراضي، لذا يجب تثبيته يدويًا.
 
 🔧 الأمر:
-sudo apt install vim
 
+```bash
+sudo apt install vim
+```
 ---
 
 🧪 تمرين 2 - إنشاء وتحرير الملفات باستخدام nano
 
 ✅ 2.1 الانتقال إلى مجلد المشروع
-المجلد: /home/project
+المجلد:
+```bash
+/home/project
+```
 
 🔧 الأمر:
-cd /home/project
-💡 استخدم خاصية الإكمال التلقائي:
-cd /home/pr  [ثم اضغط Tab]
+```bash
+cd/home/project
+```
 
 ✅ 2.2 إنشاء وتحرير ملف نصي باستخدام nano
 
 🔧 الأمر:
-nano hello_world.txt
 
+```bash
+nano hello_world.txt
+```
 ✍️ اكتب في المحرر:
+```bash
 Hello world!
 This is the second line of my first-ever text file created with nano.
-
+```
 🛑 للحفظ والخروج:
 - اضغط CTRL + X
 - ثم Y للحفظ
 - ثم Enter
 
-✅ 2.3 التحقق من الملف
+2.3 التحقق من الملف
 
 🔧 الأمر:
+```bash
 cat hello_world.txt
-
+```
 👀 يجب أن ترى:
+```bash
 Hello world!
 This is the second line of my first-ever text file created with nano.
-
+```
 ---
 
-✅ 3.1 مقدمة سريعة عن Vim
+3.1 مقدمة سريعة عن Vim
 
-🧠 وضعا Vim:
+ وضعا Vim:
 - Insert Mode: لكتابة النص
 - Command Mode: للتنقل والحفظ والخروج
 
 🔧 تشغيل Vim:
+```bash
 vim
-
+```
 📖 أوامر مهمة:
-- المساعدة: :help
-- الخروج: :q
+- المساعدة: :
+ ```bash
+ -help
+ ```
+- الخروج:
+```bash
+:q
+ ```
 
-💡 للتعلم المتقدم: vim.org
+ للتعلم المتقدم: vim.org
 
 ---
 
-✅ 3.2 إنشاء وتحرير ملف نصي باستخدام Vim
+3.2 إنشاء وتحرير ملف نصي باستخدام Vim
 
 1️⃣ انتقل إلى مجلد المشروع:
+ ```bash
 cd /home/project
-
+ ```
 2️⃣ أنشئ وحرر ملفًا:
+ ```bash
 vim hello_world_2.txt
-
+ ```
 3️⃣ اضغط i للدخول إلى Insert Mode، ثم اكتب:
+ ```bash
 Hello World!
 This is the second line.
-
+ ```
 4️⃣ اضغط Esc للعودة إلى Command Mode
 
 5️⃣ للحفظ:
+ ```bash
 :w
-
+ ```
 6️⃣ للخروج:
+ ```bash
 :q
-
+ ```
 ---
 
-✅ مراجعة الأوامر الأساسية في Vim:
+ مراجعة الأوامر الأساسية في Vim:
 
 المهمة | الأمر داخل Vim
 ------|------------------
@@ -122,7 +145,7 @@ This is the second line.
 
 ---
 
-📊 مقارنة بين Vim و Nano
+ مقارنة بين Vim و Nano
 
 المقارنة | Vim | Nano
 ---------|-----|------
@@ -135,7 +158,7 @@ This is the second line.
 الحفظ والخروج | :w و :q | Ctrl + O و Ctrl + X
 الانتشار | شائع بين المطورين | شائع بين المبتدئين
 
-🎯 متى تستخدم كل محرر؟
+ متى تستخدم كل محرر؟
 
 ✅ استخدم Nano إذا:
 - كنت مبتدئًا في Linux
