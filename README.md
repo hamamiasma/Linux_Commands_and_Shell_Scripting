@@ -365,8 +365,111 @@ man -k .
 
 ---
 
+pwd: to get the location of your present working directory
+ls: to list the files and directories within a directory
+mkdir: to create a new directory
+cd: to change your present working directory
+touch: to create a new file
+find: to search for and locate files
+rm: to remove a file
+mv: to rename or move a file
+cp: to copy a file
+
+
 
  **النتيجة المتوقعة في الطرفية:**
 ```
 I am done with the lab!
 ```
+---
+
+
+## 🔐 Security: Managing File Permissions and Ownership
+
+
+### ❓ لماذا نحتاج لصلاحيات الملفات وملكيتها؟
+نظام Linux هو نظام متعدد المستخدمين، ما يعني أن المستخدمين الآخرين يمكنهم رؤية ملفاتك ما لم تقم بتقييد ذلك. لتأمين ملفات حساسة (مثل وثائق ضريبية أو ملفات عمل)، تحتاج لتحديد من يستطيع الوصول إلى هذه الملفات.
+
+---
+
+### 👥 ملكية الملفات في Linux
+
+هناك 3 مستويات للملكية:
+- **User**: المستخدم الذي أنشأ الملف.
+- **Group**: مجموعة من المستخدمين.
+- **Other**: أي شخص آخر على النظام.
+
+فقط مالك الملف يستطيع تغيير صلاحياته.
+
+---
+
+### 🔍 عرض صلاحيات الملفات
+
+```bash
+echo "Who can read this file?" > my_new_file
+more my_new_file
+ls -l my_new_file
+```
+
+ مثال الناتج:
+```
+-rw-r--r-- 1 theia users 25 Dec 22 17:47 my_new_file
+```
+
+ تفسير الصلاحيات:
+- `rw-` → صلاحيات المستخدم: قراءة وكتابة
+- `r--` → صلاحيات المجموعة: قراءة فقط
+- `r--` → صلاحيات الآخرين: قراءة فقط
+
+🚩 الملاحظة:
+- `-` في البداية يعني ملف.
+- `d` في البداية تعني مجلد (directory).
+
+---
+
+### 📁 صلاحيات المجلدات
+
+| الصلاحية | المعنى                                      |
+|----------|----------------------------------------------|
+| r        | عرض محتويات المجلد (ls)                     |
+| w        | إضافة أو حذف ملفات داخل المجلد             |
+| x        | الدخول إلى المجلد باستخدام cd              |
+
+---
+
+### 🔒 جعل الملف خاص (Private)
+
+```bash
+chmod go-r my_new_file
+ls -l my_new_file
+```
+
+ الناتج:
+```
+-rw------- 1 theia users 24 Dec 22 18:49 my_new_file
+```
+
+✅ باستخدام `chmod go-r` أزلنا صلاحية القراءة من المجموعة والآخرين.
+
+---
+
+### ⚙️ الملفات التنفيذية (Executable Files)
+
+- الملف التنفيذي يحتوي على أوامر تُفسّر مباشرة من قبل النظام.
+- يشمل البرامج النصية (Scripts) مثل Bash scripts.
+  
+ لكي يكون النص التنفيذي قابل للتشغيل:
+1. يجب إعطاء صلاحية التنفيذ `chmod +x filename`
+2. يجب أن يحتوي على **shebang** مثل:
+```bash
+#!/bin/bash
+```
+
+ مثال مستقبلي ستتعلمه في Scripting:
+```bash
+#!/bin/bash
+echo "This is an executable script!"
+```
+
+---
+
