@@ -368,7 +368,9 @@ man -k .
 pwd: to get the location of your present working directory
 ls: to list the files and directories within a directory
 mkdir: to create a new directory
+
 cd: to change your present working directory
+
 touch: to create a new file
 find: to search for and locate files
 rm: to remove a file
