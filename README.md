@@ -658,3 +658,24 @@ mkdir: cannot create directory ‘test_again’: Permission denied
 
 ---
 
+Here are some common options that you can try with the ls command:
+
+Option	Description
+-a	list all files, including hidden files
+-d	list directories only, do not include files
+-h	with -l and -s, print sizes like 1K, 234M, 2G
+-l	include attributes like permissions, owner, size, and last-modified date
+-S	sort by file size, largest first
+-t	sort by last-modified date, newest first
+-r	reverse the sort order
+To get a long list of all files in /etc, including any hidden files, enter the following:
+
+1
+ls -la /etc
+
+Copied!
+Here we combined the options -l and -a by using the shorter notation, -la.
+
+---
+
+
