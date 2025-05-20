@@ -85,6 +85,7 @@ ls -l my_new_file
 1. يجب أن يحتوي على إذن التنفيذ (x)
 2. يجب أن يحتوي على سطر الـ shebang في البداية (مثل `#!/bin/bash`)
 
+* Das -e ist eine Option des echo-Befehls in Bash und steht für "enable interpretation of backslash escapes" – auf Deutsch: Aktiviere die Interpretation von Escape-Zeichen wie \n, \t, etc.
 مثال:
 
 ```bash
