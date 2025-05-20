@@ -658,24 +658,42 @@ mkdir: cannot create directory ‘test_again’: Permission denied
 
 ---
 
-Here are some common options that you can try with the ls command:
 
-Option	Description
--a	list all files, including hidden files
--d	list directories only, do not include files
--h	with -l and -s, print sizes like 1K, 234M, 2G
--l	include attributes like permissions, owner, size, and last-modified date
--S	sort by file size, largest first
--t	sort by last-modified date, newest first
--r	reverse the sort order
-To get a long list of all files in /etc, including any hidden files, enter the following:
+## Verwendung des `ls`-Befehls in Linux
 
-1
+Der `ls`-Befehl wird verwendet, um Dateien und Verzeichnisse in einem Verzeichnis aufzulisten. Mit verschiedenen Optionen kann das Verhalten des Befehls angepasst werden.
+
+### Häufig verwendete Optionen
+
+| Option | Beschreibung                                                                                    |
+| ------ | ----------------------------------------------------------------------------------------------- |
+| `-a`   | Listet alle Dateien auf, einschließlich versteckter Dateien (die mit einem Punkt beginnen)      |
+| `-d`   | Zeigt nur Verzeichnisse an, keine Dateien                                                       |
+| `-h`   | Gibt Dateigrößen in lesbarem Format aus (z. B. 1K, 234M, 2G); wird mit `-l` oder `-s` verwendet |
+| `-l`   | Gibt eine detaillierte Liste aus mit Rechten, Besitzer, Größe und Änderungsdatum                |
+| `-S`   | Sortiert nach Dateigröße, größte zuerst                                                         |
+| `-t`   | Sortiert nach Änderungsdatum, neueste zuerst                                                    |
+| `-r`   | Kehrt die Sortierreihenfolge um                                                                 |
+
+### Beispiel
+
+Um eine detaillierte Liste aller Dateien im Verzeichnis `/etc` anzuzeigen, einschließlich versteckter Dateien, verwenden Sie:
+
+```bash
 ls -la /etc
+```
 
-Copied!
-Here we combined the options -l and -a by using the shorter notation, -la.
+Diese Kombination von Optionen:
+
+* `-l` zeigt eine lange Liste mit detaillierten Informationen,
+* `-a` zeigt auch versteckte Dateien,
+* `/etc` gibt das Zielverzeichnis an.
 
 ---
 
+Weitere Informationen finden Sie in der Manpage mit:
+
+```bash
+man ls
+```
 
